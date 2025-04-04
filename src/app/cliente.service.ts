@@ -24,15 +24,15 @@ export class ClienteService {
         Object.assign(c, cliente);
       }
     })
-    localStorage.setItem(ClienteService.REPO_CLIENTES,JSON.stringify(storage));
+    localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(storage));
   }
 
   deletar(cliente: Cliente){
     const storage = this.obterStorage();
 
-    const novalista = storage.filter(c => c.id !== cliente.id)
+    const novaLista = storage.filter(c => c.id !== cliente.id)
 
-    localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(novalista));
+    localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(novaLista));
   }
 
   pesquisarClientes(nomeBusca: string) : Cliente[] {
